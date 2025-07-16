@@ -11,6 +11,7 @@ you.com
 perplexity.ai
 pi.ai
 !deepseek.com
+!deepai.org
 chatgpt.com
 groq.com
 huggingface.co/chat
@@ -20,7 +21,6 @@ runwayml.com
 dreamstudio.ai
 firefly.adobe.com
 openai.com/dall-e
-deepai.org
 craiyon.com
 tensor.art
 notion.ai
