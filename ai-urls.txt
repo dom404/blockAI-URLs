@@ -24,7 +24,7 @@ openai.com/dall-e
 craiyon.com
 tensor.art
 notion.ai
-grammarly.com
+!grammarly.com
 quillbot.com
 writesonic.com
 jasper.ai
