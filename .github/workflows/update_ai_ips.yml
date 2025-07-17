@@ -19,8 +19,7 @@ jobs:
           # AWS/Google/Microsoft
           curl -s https://ip-ranges.amazonaws.com/ip-ranges.json | jq -r '.prefixes[] | select(.service=="AMAZON") | .ip_prefix' > aws_ai_ips.txt
           curl -s https://www.gstatic.com/ipranges/goog.json | jq -r '.prefixes[] | .ipv4Prefix // .ipv6Prefix' | grep -v null > google_ai_ips.txt
-          curl -s https://www.microsoft.com/en-us/download/confirmation.aspx?id=56519 | grep -Eo "https://download\.microsoft\.com/download/[^\"]+" | xargs curl -s | jq -r '.values[] | .properties.addressPrefixes[]' > azure_ai_ips.txt
-          
+
           # Oracle/IBM/Regional
           curl -s https://docs.oracle.com/en-us/iaas/tools/public_ip_ranges.json | jq -r '.regions[].cidrs[] | .cidr' > oracle_ai_ips.txt
           curl -s https://ip-ranges.cloud.ibm.com/ip-ranges.json | jq -r '.prefixes[] | .ip_prefix' > ibm_ai_ips.txt
