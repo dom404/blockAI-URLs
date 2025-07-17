@@ -9,46 +9,46 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Required for proper git history
 
-      # Step 1: Fetch and filter AI domains
-      - name: Discover AI domains
+      # Step 1: Fetch latest changes
+      - name: Sync with remote
         run: |
-          # Fetch from multiple sources
+          git config --global user.name "Automated Updater"
+          git config --global user.email "actions@github.com"
+          git pull origin main --rebase --autostash
+
+      # Step 2: Discover AI domains
+      - name: Fetch AI domains
+        run: |
           curl --retry 3 -s "https://crt.sh/?q=%25.ai%25&output=json" | 
             jq -r '.[].name_value' | 
-            sed 's/\*\.//g; s/^\.//' |  # Remove wildcards and leading dots
-            grep -iE '\.ai$|ai\-|gpt|llm|model|chatbot' |  # Case-insensitive filter
-            awk 'length($0)>3 && !seen[tolower($0)]++' > new_AI_list.txt  # Skip short strings and dedupe
+            sed 's/\*\.//g; s/^\.//' |
+            grep -iE '\.ai$|ai\-|gpt|llm|model|chatbot' |
+            awk 'length($0)>3 && !seen[tolower($0)]++' > new_AI_list.txt
 
-          # Fallback: Add manual discoveries if API fails
-          if [ ! -s new_AI_list.txt ]; then
-            echo "api-fallback.ai-test.example.com" >> new_AI_list.txt
-            echo "Warning: crt.sh returned empty data" >> debug.log
-          fi
-
-      # Step 2: Validate and merge
-      - name: Generate combined list
+      # Step 3: Generate combined list
+      - name: Merge lists
         run: |
           {
-            echo "# Manual list (authoritative) - Updated $(date +'%Y-%m-%d')"
+            echo "# Manual list - Updated $(date +'%Y-%m-%d')"
             grep -v '^#' manual_block_AI.txt | sed '/^$/d'
             echo ""
             echo "# Auto-discovered list - Generated on $(date +'%Y-%m-%d')"
             [ -s new_AI_list.txt ] && cat new_AI_list.txt || echo "# No new domains found"
           } > combined_AI_list.txt
 
-          # Validate output
-          echo "Total domains: $(grep -vc '^#' combined_AI_list.txt)"
-          head -n 10 combined_AI_list.txt
-
-      # Step 3: Push changes only if new domains exist
-      - name: Commit updates
-        if: contains(steps.discover.outputs, 'domains')
+      # Step 4: Commit and push only if changes exist
+      - name: Push updates
         run: |
-          git config --global user.name "Automated Updater"
-          git config --global user.email "actions@github.com"
           git add new_AI_list.txt combined_AI_list.txt
-          git commit -m "Auto-update: $(date +'%Y-%m-%d')" || exit 0
-          git pull --rebase origin main
-          git push
+          if ! git diff --quiet; then
+            git commit -m "Auto-update: $(date +'%Y-%m-%d')"
+            git pull origin main --rebase --autostash
+            git push origin main
+            echo "Changes pushed successfully"
+          else
+            echo "No changes to commit"
+          fi
 
