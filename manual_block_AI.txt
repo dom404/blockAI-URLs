@@ -10,7 +10,7 @@ chat.lmsys.org
 you.com
 perplexity.ai
 pi.ai
-!deepseek.com
+deepseek.com
 !deepai.org
 chatgpt.com
 groq.com
