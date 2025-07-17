@@ -2,7 +2,7 @@ name: Update AI Blocklists
 on:
   schedule:
     - cron: '0 12 * * *'  # Daily at 12 PM UTC
-  workflow_dispatch:    
+  workflow_dispatch:       # Manual trigger option
 
 jobs:
   update:
@@ -22,20 +22,6 @@ jobs:
       - name: Sync with remote
         run: git pull --rebase origin main
 
-
-              # Fetch latest IP ranges
-      - name: Get AI IP ranges
-        run: |
-          # AWS (OpenAI/Midjourney/Anthropic)
-          curl -s https://ip-ranges.amazonaws.com/ip-ranges.json | 
-            jq -r '.prefixes[] | select(.service=="AMAZON") | .ip_prefix' > aws_ai_ips.txt
-          
-          # Google (Gemini/Bard)
-          curl -s https://www.gstatic.com/ipranges/goog.json | 
-            jq -r '.prefixes[] | .ipv4Prefix // .ipv6Prefix' | 
-            grep -v null > google_ai_ips.txt
-            
-
       # Your domain discovery and processing steps
       - name: Fetch AI domains
         run: |
@@ -48,24 +34,11 @@ jobs:
       - name: Generate combined list
         run: |
           {
-           # SECTION 1: MANUAL DOMAINS
-            echo "# === MANUAL BLOCKLIST (DOMAINS) ==="
+            echo "# Manual list - Updated $(date +'%Y-%m-%d')"
             grep -v '^#' manual_block_AI.txt | sed '/^$/d'
-            
-            # SECTION 2: AUTO-DISCOVERED DOMAINS
             echo ""
-            echo "# === AUTO-DISCOVERED DOMAINS ==="
-            [ -s new_AI_list.txt ] && cat new_AI_list.txt || echo "# None found"
-            
-            # SECTION 3: IP RANGES
-            echo ""
-            echo "# === AWS AI IP RANGES ==="
-            [ -s aws_ai_ips.txt ] && cat aws_ai_ips.txt || echo "# None found"
-            
-            echo ""
-            echo "# === GOOGLE AI IP RANGES ==="
-            [ -s google_ai_ips.txt ] && cat google_ai_ips.txt || echo "# None found"
-            
+            echo "# Auto-discovered list - Generated on $(date +'%Y-%m-%d')"
+            [ -s new_AI_list.txt ] && cat new_AI_list.txt || echo "# No new domains found"
           } > combined_AI_list.txt
 
       # Commit and push with conflict resolution
