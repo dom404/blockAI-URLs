@@ -1,28 +1,37 @@
+# Generative AI/Chatbots
 chat.openai.com
 platform.openai.com
-www.bing.com
-copilot.microsoft.com
-gemini.google.com
+api.openai.com
 claude.ai
 claude2.ai
-poe.com
-chat.lmsys.org
+anthropic.com
+gemini.google.com
+bard.google.com
+palm.google.com
+deepseek.com
+deepseek.ai
+pi.ai
+inflection.ai
 you.com
 perplexity.ai
-pi.ai
-deepseek.com
-deepai.org
-chatgpt.com
-groq.com
+poe.com
+character.ai
+chat.lmsys.org
 huggingface.co/chat
-midjourney.com
-leonardo.ai
-runwayml.com
-dreamstudio.ai
-firefly.adobe.com
-openai.com/dall-e
-craiyon.com
-tensor.art
+groq.com
+together.ai
+mistral.ai
+ollama.ai
+openrouter.ai
+
+# AI Search Engines
+phind.com
+andisearch.com
+komo.ai
+exa.ai
+metaphor.systems
+
+# AI Writing & Productivity
 notion.ai
 grammarly.com
 quillbot.com
@@ -30,18 +39,85 @@ writesonic.com
 jasper.ai
 copy.ai
 rytr.me
-character.ai
+textcortex.com
+hyperwriteai.com
+wordtune.com
+chibi.ai
+lex.page
+prosper.guide
+
+# AI Image/Video Generation
+midjourney.com
+leonardo.ai
+runwayml.com
+dreamstudio.ai
+stability.ai
+firefly.adobe.com
+openai.com/dall-e
+deepai.org
+craiyon.com
+tensor.art
+getimg.ai
+playgroundai.com
+stablediffusionweb.com
+seaart.ai
+
+# AI Voice/Sound Tools
+elevenlabs.io
+voice.ai
+resemble.ai
+murf.ai
+play.ht
+wellsaidlabs.com
+suno.com
+udio.com
+boomy.com
+soundraw.io
+aiva.ai
+
+# AI Coding Assistants
 github.com/features/copilot
 www.cursor.sh
 replit.com
 tabnine.com
 codeium.com
-elevenlabs.io
-voice.ai
-suno.com
-udio.com
+sourcegraph.com
+codestral.mistral.ai
+continue.dev
+fauxpilot.com
+
+# AI Research/Platforms
 huggingface.co
-together.ai
-ollama.ai
-openrouter.ai
 replicate.com
+modal.com
+banana.dev
+runpod.io
+lambda-labs.com
+vast.ai
+
+# Enterprise AI Tools
+cohere.com
+ai21.com
+writer.com
+glean.com
+assemblyai.com
+forethought.ai
+vernai.com
+
+# Regional AI Services
+# China
+yiyan.baidu.com
+tongyi.aliyun.com
+# Europe
+deepmind.google
+mistral.ai
+# Middle East
+ai.mawdoo3.com
+
+# New AI Startups (Watchlist)
+sarah-ai.com
+augment.ai
+dust.tt
+fixie.ai
+spellcraft.ai
+superagi.com
