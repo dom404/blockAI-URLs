@@ -24,6 +24,9 @@ mistral.ai
 ollama.ai
 openrouter.ai
 x.ai
+x.com
+grok.x.com
+api.x.ai
 
 # AI Search Engines
 phind.com
