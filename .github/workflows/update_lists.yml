@@ -9,7 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
       # Discover new AI domains
       - name: Fetch SSL-certified AI domains
         run: |
@@ -24,8 +23,6 @@ jobs:
           curl -s "https://crt.sh/?q=%25.ai%25&output=json" > debug.json
           echo "API response length: $(wc -l debug.json)"
           head -n 5 debug.json  # Show sample output
-
-    
 
       # Generate a combined list
       - name: Merge lists
