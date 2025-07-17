@@ -2,7 +2,7 @@ name: Update AI Blocklists
 on:
   schedule:
     - cron: '0 12 * * *'  # Daily at 12 PM UTC
-  workflow_dispatch:       # Manual trigger option
+  workflow_dispatch:       # Manual trigger
 
 jobs:
   update:
@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Get complete history to allow rebasing
+          fetch-depth: 0 
 
       # Configure Git
       - name: Set up Git
@@ -18,11 +18,9 @@ jobs:
           git config --global user.name "Automated Updater"
           git config --global user.email "actions@github.com"
 
-      # Pull latest changes with rebase
       - name: Sync with remote
         run: git pull --rebase origin main
 
-      # Your domain discovery and processing steps
       - name: Fetch AI domains
         run: |
           curl --retry 3 -s "https://crt.sh/?q=%25.ai%25&output=json" | 
@@ -41,7 +39,6 @@ jobs:
             [ -s new_AI_list.txt ] && cat new_AI_list.txt || echo "# No new domains found"
           } > combined_AI_list.txt
 
-      # Commit and push with conflict resolution
       - name: Push updates
         run: |
           git add new_AI_list.txt combined_AI_list.txt
