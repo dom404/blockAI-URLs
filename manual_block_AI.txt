@@ -11,7 +11,7 @@ you.com
 perplexity.ai
 pi.ai
 deepseek.com
-!deepai.org
+deepai.org
 chatgpt.com
 groq.com
 huggingface.co/chat
