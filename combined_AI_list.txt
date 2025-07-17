@@ -12,7 +12,7 @@ you.com
 perplexity.ai
 pi.ai
 deepseek.com
-!deepai.org
+deepai.org
 chatgpt.com
 groq.com
 huggingface.co/chat
@@ -25,7 +25,7 @@ openai.com/dall-e
 craiyon.com
 tensor.art
 notion.ai
-!grammarly.com
+grammarly.com
 quillbot.com
 writesonic.com
 jasper.ai
