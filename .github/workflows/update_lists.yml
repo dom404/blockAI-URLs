@@ -1,0 +1,39 @@
+name: Update AI Blocklists
+on:
+  schedule:
+    - cron: '0 12 * * *'  # Daily at 12 PM UTC
+  workflow_dispatch:       # Manual trigger option
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Discover new AI domains
+      - name: Fetch SSL-certified AI domains
+        run: |
+          curl -s "https://crt.sh/?q=%.ai%&output=json" | 
+          jq -r '.[].name_value' | 
+          sed 's/*.//g' | 
+          awk '!seen[$0]++' > new_AI_list.txt
+
+      # Generate combined list
+      - name: Merge lists
+        run: |
+          {
+            echo "# Manual list - authoritatively updated"
+            grep -v '^#' manual_block_AI.txt | sed '/^$/d'
+            echo ""
+            echo "# Automatic list - generated on $(date +'%Y-%m-%d')"
+            cat new_AI_list.txt
+          } > combined_AI_list.txt
+
+      # Push changes
+      - name: Commit updates
+        run: |
+          git config --global user.name "Automated Updater"
+          git config --global user.email "actions@github.com"
+          git add new_AI_list.txt combined_AI_list.txt
+          git commit -m "Auto-update: $(date +'%Y-%m-%d')"
+          git push
