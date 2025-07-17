@@ -25,9 +25,9 @@ jobs:
             grep -v null > google_ai_ips.txt
           
           # Microsoft (Copilot)
-          curl -s https://www.microsoft.com/en-us/download/confirmation.aspx?id=56519 | 
-            grep -Eo "https://download\.microsoft\.com/download/[^\"]+" | 
-            xargs curl -s | jq -r '.values[] | .properties.addressPrefixes[]' > azure_ai_ips.txt
+  #        curl -s https://www.microsoft.com/en-us/download/confirmation.aspx?id=56519 | 
+ #           grep -Eo "https://download\.microsoft\.com/download/[^\"]+" | 
+  #          xargs curl -s | jq -r '.values[] | .properties.addressPrefixes[]' > azure_ai_ips.txt
 
       # Your existing domain discovery
       - name: Fetch AI domains
@@ -60,10 +60,10 @@ jobs:
             echo "# === GOOGLE AI IP RANGES ==="
             [ -s google_ai_ips.txt ] && cat google_ai_ips.txt || echo "# None found"
             
-            echo ""
-            echo "# === AZURE (MICROSOFT COPILOT) IP RANGES ==="
-            [ -s azure_ai_ips.txt ] && cat azure_ai_ips.txt || echo "# None found"
-          } > combined_blocklist.txt
+#            echo ""
+#            echo "# === AZURE (MICROSOFT COPILOT) IP RANGES ==="
+ #           [ -s azure_ai_ips.txt ] && cat azure_ai_ips.txt || echo "# None found"
+ #         } > combined_blocklist.txt
 
           # Validate output
           echo "Total domains: $(grep -vc '^#' combined_blocklist.txt)"
