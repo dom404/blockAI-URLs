@@ -2,7 +2,7 @@ name: Update AI Blocklists
 on:
   schedule:
     - cron: '0 12 * * *'  # Daily at 12 PM UTC
-  workflow_dispatch:       # Manual trigger
+  workflow_dispatch:
 
 jobs:
   update:
@@ -10,17 +10,26 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0 
+          fetch-depth: 0
 
-      # Configure Git
-      - name: Set up Git
+      # Fetch latest IP ranges
+      - name: Get AI IP ranges
         run: |
-          git config --global user.name "Automated Updater"
-          git config --global user.email "actions@github.com"
+          # AWS (OpenAI/Midjourney/Anthropic)
+          curl -s https://ip-ranges.amazonaws.com/ip-ranges.json | 
+            jq -r '.prefixes[] | select(.service=="AMAZON") | .ip_prefix' > aws_ai_ips.txt
+          
+          # Google (Gemini/Bard)
+          curl -s https://www.gstatic.com/ipranges/goog.json | 
+            jq -r '.prefixes[] | .ipv4Prefix // .ipv6Prefix' | 
+            grep -v null > google_ai_ips.txt
+          
+          # Microsoft (Copilot)
+          curl -s https://www.microsoft.com/en-us/download/confirmation.aspx?id=56519 | 
+            grep -Eo "https://download\.microsoft\.com/download/[^\"]+" | 
+            xargs curl -s | jq -r '.values[] | .properties.addressPrefixes[]' > azure_ai_ips.txt
 
-      - name: Sync with remote
-        run: git pull --rebase origin main
-
+      # Your existing domain discovery
       - name: Fetch AI domains
         run: |
           curl --retry 3 -s "https://crt.sh/?q=%25.ai%25&output=json" | 
@@ -29,44 +38,43 @@ jobs:
             grep -iE '\.ai$|ai\-|gpt|llm|model|chatbot' |
             awk 'length($0)>3 && !seen[tolower($0)]++' > new_AI_list.txt
 
-      - name: Generate combined list
+      # Generate COMBINED list (Domains + IPs)
+      - name: Generate master blocklist
         run: |
           {
-            echo "# Manual list - Updated $(date +'%Y-%m-%d')"
+            # SECTION 1: MANUAL DOMAINS
+            echo "# === MANUAL BLOCKLIST (DOMAINS) ==="
             grep -v '^#' manual_block_AI.txt | sed '/^$/d'
+            
+            # SECTION 2: AUTO-DISCOVERED DOMAINS
             echo ""
-            echo "# Auto-discovered list - Generated on $(date +'%Y-%m-%d')"
-            [ -s new_AI_list.txt ] && cat new_AI_list.txt || echo "# No new domains found"
-          } > combined_AI_list.txt
+            echo "# === AUTO-DISCOVERED DOMAINS ==="
+            [ -s new_AI_list.txt ] && cat new_AI_list.txt || echo "# None found"
+            
+            # SECTION 3: IP RANGES
+            echo ""
+            echo "# === AWS AI IP RANGES ==="
+            [ -s aws_ai_ips.txt ] && cat aws_ai_ips.txt || echo "# None found"
+            
+            echo ""
+            echo "# === GOOGLE AI IP RANGES ==="
+            [ -s google_ai_ips.txt ] && cat google_ai_ips.txt || echo "# None found"
+            
+            echo ""
+            echo "# === AZURE (MICROSOFT COPILOT) IP RANGES ==="
+            [ -s azure_ai_ips.txt ] && cat azure_ai_ips.txt || echo "# None found"
+          } > combined_blocklist.txt
 
-      - name: Push updates
+          # Validate output
+          echo "Total domains: $(grep -vc '^#' combined_blocklist.txt)"
+          echo "Total IP ranges: $(grep -E '^[0-9]|:' combined_blocklist.txt | wc -l)"
+
+      # Push changes
+      - name: Commit updates
         run: |
-          git add new_AI_list.txt combined_AI_list.txt
-          
-          # Only commit if there are changes
-          if ! git diff --cached --quiet; then
-            git commit -m "Auto-update: $(date +'%Y-%m-%d')"
-            
-            # Try pushing with rebase
-            attempts=0
-            max_attempts=3
-            
-            while [ $attempts -lt $max_attempts ]; do
-              git pull --rebase origin main
-              if git push origin main; then
-                echo "Push successful"
-                break
-              else
-                attempts=$((attempts+1))
-                echo "Push failed, attempt $attempts of $max_attempts"
-                sleep 5
-              fi
-            done
-            
-            if [ $attempts -eq $max_attempts ]; then
-              echo "Failed to push after $max_attempts attempts"
-              exit 1
-            fi
-          else
-            echo "No changes to commit"
-          fi
+          git config --global user.name "Automated Updater"
+          git config --global user.email "actions@github.com"
+          git add *.txt
+          git diff --quiet && exit 0 || git commit -m "Auto-update: $(date +'%Y-%m-%d')"
+          git pull --rebase origin main
+          git push origin main
