@@ -1,0 +1,54 @@
+name: Update AI IP Blocklist
+on:
+  schedule:
+    - cron: '0 18 * * *'  # Daily at 6 PM UTC (offset from domains)
+  workflow_dispatch:
+
+jobs:
+  update_ips:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Fetch all IP ranges
+      - name: Get global AI IPs
+        run: |
+          # X.ai/Grok (Twitter)
+          curl -s https://ip-ranges.x.com/ip-ranges.json | jq -r '.prefixes[] | .ip_prefix' > xai_ips.txt || echo "# Failed to fetch X.ai IPs" > xai_ips.txt
+          
+          # AWS/Google/Microsoft
+          curl -s https://ip-ranges.amazonaws.com/ip-ranges.json | jq -r '.prefixes[] | select(.service=="AMAZON") | .ip_prefix' > aws_ai_ips.txt
+          curl -s https://www.gstatic.com/ipranges/goog.json | jq -r '.prefixes[] | .ipv4Prefix // .ipv6Prefix' | grep -v null > google_ai_ips.txt
+          curl -s https://www.microsoft.com/en-us/download/confirmation.aspx?id=56519 | grep -Eo "https://download\.microsoft\.com/download/[^\"]+" | xargs curl -s | jq -r '.values[] | .properties.addressPrefixes[]' > azure_ai_ips.txt
+          
+          # Oracle/IBM/Regional
+          curl -s https://docs.oracle.com/en-us/iaas/tools/public_ip_ranges.json | jq -r '.regions[].cidrs[] | .cidr' > oracle_ai_ips.txt
+          curl -s https://ip-ranges.cloud.ibm.com/ip-ranges.json | jq -r '.prefixes[] | .ip_prefix' > ibm_ai_ips.txt
+          curl -s https://api.baidu.com/ip-ranges | jq -r '.prefixes[]' > baidu_ips.txt || echo "# Failed to fetch Baidu" > baidu_ips.txt
+
+      # Generate IP blocklist
+      - name: Build IP list
+        run: |
+          {
+            echo "# === X.ai/Grok IPs ==="
+            cat xai_ips.txt
+            echo ""
+            echo "# === AWS (OpenAI/Anthropic) ==="
+            cat aws_ai_ips.txt
+            echo ""
+            echo "# === Google (Gemini) ==="
+            cat google_ai_ips.txt
+            echo ""
+            echo "# === Regional (Baidu/Yandex) ==="
+            cat baidu_ips.txt
+          } > IP_AI_list.txt
+
+      # Push changes
+      - name: Commit IP updates
+        run: |
+          git config --global user.name "Automated Updater"
+          git config --global user.email "actions@github.com"
+          git add *.txt
+          git diff --quiet && exit 0 || git commit -m "IP update: $(date +'%Y-%m-%d')"
+          git pull --rebase origin main
+          git push origin main
