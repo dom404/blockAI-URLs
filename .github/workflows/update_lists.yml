@@ -2,7 +2,7 @@ name: Update AI Blocklists
 on:
   schedule:
     - cron: '0 12 * * *'  # Daily at 12 PM UTC
-  workflow_dispatch:       # Manual trigger option
+  workflow_dispatch:    
 
 jobs:
   update:
