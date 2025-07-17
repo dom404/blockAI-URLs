@@ -11,19 +11,19 @@ jobs:
       - uses: actions/checkout@v4
 
       # Discover new AI domains
-- name: Fetch SSL-certified AI domains
-  run: |
-    curl -s "https://crt.sh/?q=%25.ai%25&output=json" | 
-    jq -r '.[].name_value' | 
-    sed 's/\*\.//g' | 
-    grep -E '\.ai$|ai\-|gpt|llm' |  # Filters for AI-related domains
-    awk '!seen[$0]++' > new_AI_list.txt
+      - name: Fetch SSL-certified AI domains
+        run: |
+          curl -s "https://crt.sh/?q=%25.ai%25&output=json" | 
+          jq -r '.[].name_value' | 
+          sed 's/\*\.//g' | 
+          grep -E '\.ai$|ai\-|gpt|llm' |  # Filters for AI-related domains
+          awk '!seen[$0]++' > new_AI_list.txt
 
-    - name: Debug API response
-  run: |
-    curl -s "https://crt.sh/?q=%25.ai%25&output=json" > debug.json
-    echo "API response length: $(wc -l debug.json)"
-    head -n 5 debug.json  # Show sample output
+      - name: Debug API response
+        run: |
+          curl -s "https://crt.sh/?q=%25.ai%25&output=json" > debug.json
+          echo "API response length: $(wc -l debug.json)"
+          head -n 5 debug.json  # Show sample output
 
     
 
