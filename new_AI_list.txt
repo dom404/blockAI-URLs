@@ -883,13 +883,13 @@ secure.isso.ai
 dashboard.vital.ai
 project.ai
 metaphor.ai
+thepiratebay.ai
+www.thepiratebay.ai
 code.avatar.ai
 www.code.avatar.ai
 hostmaster@nv.ai
 nv.ai
 www.nv.ai
-thepiratebay.ai
-www.thepiratebay.ai
 discussions.avatar.ai
 www.discussions.avatar.ai
 name.ai
