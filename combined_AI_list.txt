@@ -1,4 +1,4 @@
-# Manual list - Updated 2025-09-06
+# Manual list - Updated 2025-09-07
 chat.openai.com
 platform.openai.com
 api.openai.com
@@ -105,7 +105,7 @@ fixie.ai
 spellcraft.ai
 superagi.com
 
-# Auto-discovered list - Generated on 2025-09-06
+# Auto-discovered list - Generated on 2025-09-07
 www.ifca.ai
 www.ai-cube.co.jp
 nbaonline.nba.ai
@@ -131,8 +131,6 @@ secure.niki.ai
 ai-mail01.ai-network.local
 soc.ai
 www.soc.ai
-api.ai
-demo.api.ai
 tz.ai
 www.tz.ai
 exchange.mad.ai
@@ -142,8 +140,10 @@ dashboard.marketing.ai
 embed.marketing.ai
 marketing.ai
 www.marketing.ai
+api.ai
 api.api.ai
 console.api.ai
+demo.api.ai
 dev.api.ai
 developer.api.ai
 manager.api.ai
@@ -991,13 +991,13 @@ secure.isso.ai
 dashboard.vital.ai
 project.ai
 metaphor.ai
-thepiratebay.ai
-www.thepiratebay.ai
 code.avatar.ai
 www.code.avatar.ai
 hostmaster@nv.ai
 nv.ai
 www.nv.ai
+thepiratebay.ai
+www.thepiratebay.ai
 discussions.avatar.ai
 www.discussions.avatar.ai
 name.ai
