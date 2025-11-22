@@ -1,4 +1,4 @@
-# Manual list - Updated 2025-11-21
+# Manual list - Updated 2025-11-22
 chat.openai.com
 platform.openai.com
 api.openai.com
@@ -105,7 +105,7 @@ fixie.ai
 spellcraft.ai
 superagi.com
 
-# Auto-discovered list - Generated on 2025-11-21
+# Auto-discovered list - Generated on 2025-11-22
 www.ifca.ai
 www.ai-cube.co.jp
 nbaonline.nba.ai
