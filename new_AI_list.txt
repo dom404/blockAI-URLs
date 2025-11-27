@@ -23,6 +23,8 @@ secure.niki.ai
 ai-mail01.ai-network.local
 soc.ai
 www.soc.ai
+api.ai
+demo.api.ai
 tz.ai
 www.tz.ai
 exchange.mad.ai
@@ -32,6 +34,13 @@ dashboard.marketing.ai
 embed.marketing.ai
 marketing.ai
 www.marketing.ai
+api.api.ai
+console.api.ai
+dev.api.ai
+developer.api.ai
+manager.api.ai
+support.api.ai
+www.api.ai
 help.ai
 www.help.ai
 dash.marketing.ai
@@ -44,8 +53,6 @@ ifca.ai
 ai-tol-sbs-2011.aitoledo.local
 ava.ai
 client2.ava.ai
-api.ai
-demo.api.ai
 secure.ai-metal.com
 www.ai-career.jp
 sort.survey.tx.ai
@@ -117,6 +124,12 @@ mlrv.ai
 e-commerce.ai
 int.ai
 bot.ai
+assessments.glider.ai
+cdnassessments.glider.ai
+cdn.glider.ai
+glider.ai
+previewassessments.glider.ai
+www.glider.ai
 dialog.ai
 face.ai
 faces.ai
@@ -414,6 +427,12 @@ jp.ai
 oo.ai
 or.ai
 xx.ai
+api.rainmakr.ai
+connect.rainmakr.ai
+data.rainmakr.ai
+rainmakr.ai
+speech.rainmakr.ai
+www.rainmakr.ai
 ab.ai
 a-b.ai
 abr.ai
@@ -428,6 +447,7 @@ neo4j.turtle.ai
 redis.turtle.ai
 turtle.ai
 www.turtle.ai
+www.hugo.ai
 newark-linode.labs.akam.ai
 ivan.ai
 www.ivan.ai
@@ -555,6 +575,7 @@ ferret.ai
 api-dev.intro.ai
 api.intro.ai
 intro.ai
+outlier.ai
 beta.xor.ai
 nous.ai
 peyton.ai
@@ -591,6 +612,7 @@ bot-beta.xor.ai
 bot-alpha.xor.ai
 ovo.ai
 xs.ai
+logging.rainmakr.ai
 ivr-demo.reactive.ai
 cubic.ai
 olivia.ai
@@ -599,6 +621,7 @@ www.atlas.ai
 phpmyadmin.snips.ai
 snips.ai
 www.snips.ai
+discovery.ai
 ted.iris.ai
 ifunded.artk.ai
 iran.ai
@@ -621,6 +644,7 @@ www.blog.mic.ai
 deputy.ai
 www.deputy.ai
 reports.deputy.ai
+lucid.ai
 choice.ai
 kitt.ai
 alt.ai
@@ -638,6 +662,8 @@ hostmaster@sdd.ai
 sdd.ai
 www.sdd.ai
 evil.ai
+newton.ai
+www.newton.ai
 content.medicine.ai
 www.content.medicine.ai
 app.sofia.ai
@@ -652,6 +678,7 @@ www.stash.ai
 ben.yaf.ai
 www.ben.yaf.ai
 adx.ai
+api.home.ai
 mimetic.ai
 www.mimetic.ai
 recast.ai
@@ -665,6 +692,10 @@ estaciona.ai
 finch.ai
 www.finch.ai
 registration.ifca.ai
+dev-integration.lucid.ai
+www.lucid.ai
+techtrader.ai
+www.techtrader.ai
 app.content.ai
 www.app.content.ai
 lr.chint.ai
@@ -681,6 +712,9 @@ reach.ai
 craft.ai
 jeffl.ai
 www.jeffl.ai
+dev.socrates.ai
+preprod.socrates.ai
+socrates.ai
 mfb.ai
 postmaster@mfb.ai
 www.mfb.ai
@@ -688,8 +722,11 @@ community.mycroft.ai
 www.community.mycroft.ai
 cache.ai
 fs.ai
+collaboration.ai
+www.collaboration.ai
 useful.ai
 www.useful.ai
+qa.share.ai
 corva.ai
 www.corva.ai
 postmaster@travelers.ai
@@ -723,12 +760,15 @@ www.ironclad.ai
 captivate.ai
 styl.ai
 cloud.ai-j.jp
+system.ai
+www.system.ai
 muse.ai
 www.muse.ai
 ai-hosting.de
 oz.wit.ai
 wit.ai
 shares.ai
+mldb.ai
 premonition.ai
 sudo.ai
 www.sudo.ai
@@ -755,6 +795,7 @@ www.soz.ai
 contract.ai
 www.contract.ai
 meajuda.ai
+www.captivate.ai
 dev.intro.ai
 taobao.com.ai
 sko.ai
@@ -769,6 +810,7 @@ babycenter.ai
 ana.logical.ai
 logical.ai
 webmaster@logical.ai
+chronos.ai
 pattern.ai
 talk.ai
 postmaster@gi.ai
@@ -787,6 +829,8 @@ cctldtest.google.off.ai
 brief.ai
 predicto.ai
 www.predicto.ai
+vm.vk.ai
+www.vm.vk.ai
 luka.ai
 www.luka.ai
 b.onz.ai
@@ -810,8 +854,14 @@ thorium.nya.ai
 beta.rainbird.ai
 www.beta.rainbird.ai
 dc.ai
+assistant.ai
+avatars.ai
+wp.avatars.ai
+www.assistant.ai
+www.avatars.ai
 chint.ai
 sift.ai
+demo.socrates.ai
 ganbaran.ai
 pilipo-san.ganbaran.ai
 webmaster@ganbaran.ai
@@ -828,6 +878,7 @@ www.astral.ai
 anguillaproperties-sothebysrealty.ai
 www.anguillaproperties-sothebysrealty.ai
 receiver.x.ai
+my.api.ai
 secure.isso.ai
 dashboard.vital.ai
 project.ai
