@@ -1,4 +1,4 @@
-# Manual list - Updated 2025-11-27
+# Manual list - Updated 2025-11-28
 chat.openai.com
 platform.openai.com
 api.openai.com
@@ -105,7 +105,7 @@ fixie.ai
 spellcraft.ai
 superagi.com
 
-# Auto-discovered list - Generated on 2025-11-27
+# Auto-discovered list - Generated on 2025-11-28
 www.ifca.ai
 www.ai-cube.co.jp
 nbaonline.nba.ai
@@ -131,8 +131,6 @@ secure.niki.ai
 ai-mail01.ai-network.local
 soc.ai
 www.soc.ai
-api.ai
-demo.api.ai
 tz.ai
 www.tz.ai
 exchange.mad.ai
@@ -142,15 +140,14 @@ dashboard.marketing.ai
 embed.marketing.ai
 marketing.ai
 www.marketing.ai
-api.api.ai
-console.api.ai
-dev.api.ai
-developer.api.ai
-manager.api.ai
-support.api.ai
-www.api.ai
 help.ai
 www.help.ai
+api.ai
+console.api.ai
+demo.api.ai
+dev.api.ai
+support.api.ai
+www.api.ai
 dash.marketing.ai
 nicol.ai
 onlineaccess.ccb.ai
@@ -232,12 +229,6 @@ mlrv.ai
 e-commerce.ai
 int.ai
 bot.ai
-assessments.glider.ai
-cdnassessments.glider.ai
-cdn.glider.ai
-glider.ai
-previewassessments.glider.ai
-www.glider.ai
 dialog.ai
 face.ai
 faces.ai
@@ -555,7 +546,6 @@ neo4j.turtle.ai
 redis.turtle.ai
 turtle.ai
 www.turtle.ai
-www.hugo.ai
 newark-linode.labs.akam.ai
 ivan.ai
 www.ivan.ai
@@ -683,7 +673,6 @@ ferret.ai
 api-dev.intro.ai
 api.intro.ai
 intro.ai
-outlier.ai
 beta.xor.ai
 nous.ai
 peyton.ai
@@ -720,7 +709,6 @@ bot-beta.xor.ai
 bot-alpha.xor.ai
 ovo.ai
 xs.ai
-logging.rainmakr.ai
 ivr-demo.reactive.ai
 cubic.ai
 olivia.ai
@@ -786,7 +774,6 @@ www.stash.ai
 ben.yaf.ai
 www.ben.yaf.ai
 adx.ai
-api.home.ai
 mimetic.ai
 www.mimetic.ai
 recast.ai
@@ -820,9 +807,6 @@ reach.ai
 craft.ai
 jeffl.ai
 www.jeffl.ai
-dev.socrates.ai
-preprod.socrates.ai
-socrates.ai
 mfb.ai
 postmaster@mfb.ai
 www.mfb.ai
@@ -834,7 +818,6 @@ collaboration.ai
 www.collaboration.ai
 useful.ai
 www.useful.ai
-qa.share.ai
 corva.ai
 www.corva.ai
 postmaster@travelers.ai
@@ -969,7 +952,6 @@ www.assistant.ai
 www.avatars.ai
 chint.ai
 sift.ai
-demo.socrates.ai
 ganbaran.ai
 pilipo-san.ganbaran.ai
 webmaster@ganbaran.ai
@@ -986,18 +968,17 @@ www.astral.ai
 anguillaproperties-sothebysrealty.ai
 www.anguillaproperties-sothebysrealty.ai
 receiver.x.ai
-my.api.ai
 secure.isso.ai
 dashboard.vital.ai
 project.ai
 metaphor.ai
-thepiratebay.ai
-www.thepiratebay.ai
 code.avatar.ai
 www.code.avatar.ai
 hostmaster@nv.ai
 nv.ai
 www.nv.ai
+thepiratebay.ai
+www.thepiratebay.ai
 discussions.avatar.ai
 www.discussions.avatar.ai
 name.ai
