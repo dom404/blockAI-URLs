@@ -1,4 +1,4 @@
-# Manual list - Updated 2025-12-25
+# Manual list - Updated 2025-12-26
 chat.openai.com
 platform.openai.com
 api.openai.com
@@ -105,5 +105,5 @@ fixie.ai
 spellcraft.ai
 superagi.com
 
-# Auto-discovered list - Generated on 2025-12-25
+# Auto-discovered list - Generated on 2025-12-26
 # No new domains found
