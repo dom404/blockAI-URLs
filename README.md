@@ -8,6 +8,6 @@ Use the raw i.e.
 
 https://raw.githubusercontent.com/dom404/blockAI-URLs/main/combined_AI_list.txt
 
-Updates automaticly everyday
+Updates automatically everyday
 
 
