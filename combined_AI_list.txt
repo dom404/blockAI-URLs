@@ -1,4 +1,4 @@
-# Manual list - Updated 2026-09-03
+# Manual list - Updated 2026-09-04
 chat.openai.com
 platform.openai.com
 api.openai.com
@@ -105,7 +105,7 @@ fixie.ai
 spellcraft.ai
 superagi.com
 
-# Auto-discovered list - Generated on 2026-09-03
+# Auto-discovered list - Generated on 2026-09-04
 getq.ai
 pepe.clinc.ai
 lucky.ai
