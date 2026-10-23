@@ -194,12 +194,6 @@ zeek.ai
 remus.clinc.ai
 jenkins.deepmap.ai
 review.deepmap.ai
-assessments.glider.ai
-cdnassessments.glider.ai
-cdn.glider.ai
-glider.ai
-previewassessments.glider.ai
-www.glider.ai
 bugs.deepmap.ai
 becki.ai
 clock.ai
@@ -506,12 +500,6 @@ gansba.ai
 deputy.ai
 www.deputy.ai
 reports.deputy.ai
-api.rainmakr.ai
-connect.rainmakr.ai
-data.rainmakr.ai
-rainmakr.ai
-speech.rainmakr.ai
-www.rainmakr.ai
 hush.ai
 email.ai
 hushmail.ai
@@ -524,7 +512,6 @@ choice.ai
 presence.ai
 blog.mic.ai
 www.blog.mic.ai
-lucid.ai
 xs.ai
 cc-deloitte-vpn.insights.ai
 domchi.embodied.ai
@@ -538,8 +525,6 @@ evil.ai
 hostmaster@wisdom.ai
 mail.wisdom.ai
 wisdom.ai
-newton.ai
-www.newton.ai
 content.medicine.ai
 www.content.medicine.ai
 subut.ai
@@ -576,14 +561,9 @@ rentals.ai
 kitt.ai
 secure.niki.ai
 firm.ai
-discovery.ai
 remesh.ai
 dynamo.ai
 estaciona.ai
-my.ai
-logging.rainmakr.ai
-techtrader.ai
-www.techtrader.ai
 checkout.ai
 olivia.ai
 www.hugo.ai
@@ -608,8 +588,6 @@ awesome.ai
 demo.zeek.ai
 www.demo.zeek.ai
 christopher.ai
-collaboration.ai
-www.collaboration.ai
 cache.ai
 corva.ai
 www.corva.ai
@@ -640,8 +618,6 @@ webmaster@chatbot.ai
 www.chatbot.ai
 mycroft.ai
 www.mycroft.ai
-dev-integration.lucid.ai
-www.lucid.ai
 drive.ai
 vision.ai
 api.local.sudo.ai
@@ -674,8 +650,6 @@ api.uat.sudo.ai
 www.api.uat.sudo.ai
 uat.sudo.ai
 www.uat.sudo.ai
-system.ai
-www.system.ai
 muse.ai
 www.muse.ai
 shares.ai
@@ -708,7 +682,6 @@ sonic.ai
 nicol.ai
 oz.wit.ai
 wit.ai
-www.captivate.ai
 qed.ai
 gate.angus.ai
 www.gate.angus.ai
@@ -720,7 +693,6 @@ my.wealth.ai
 wealth.ai
 www.wealth.ai
 sko.ai
-mldb.ai
 ana.logical.ai
 logical.ai
 webmaster@logical.ai
@@ -731,7 +703,6 @@ pattern.ai
 taobao.com.ai
 jobs.ai
 www.jobs.ai
-marketing.ai
 postmaster@gi.ai
 www.gi.ai
 inbox.ai
@@ -751,7 +722,6 @@ luka.ai
 www.luka.ai
 brief.ai
 lucy.ai
-chronos.ai
 b.onz.ai
 onz.ai
 compra.ai
@@ -771,8 +741,6 @@ day.ai
 www.day.ai
 beta.rainbird.ai
 www.beta.rainbird.ai
-vm.vk.ai
-www.vm.vk.ai
 thorium.nya.ai
 amp.ai
 api.amp.ai
@@ -782,13 +750,6 @@ internal.amp.ai
 staging.amp.ai
 www.amp.ai
 dc.ai
-api.ai
-assistant.ai
-avatars.ai
-wp.avatars.ai
-www.api.ai
-www.assistant.ai
-www.avatars.ai
 chint.ai
 license.vital.ai
 sift.ai
@@ -811,14 +772,6 @@ anguillaproperties-sothebysrealty.ai
 www.anguillaproperties-sothebysrealty.ai
 www.ai-cube.co.jp
 receiver.x.ai
-api.api.ai
-console.api.ai
-demo.api.ai
-dev.api.ai
-developer.api.ai
-manager.api.ai
-my.api.ai
-support.api.ai
 www.ai-cube-jikkan.com
 dashboard.vital.ai
 thepiratebay.ai
@@ -833,6 +786,8 @@ project.ai
 de.arndt.ai
 discussions.avatar.ai
 www.discussions.avatar.ai
+api.ai
+demo.api.ai
 postmaster@adamas.ai
 cinch.turf.ai
 www.cinch.turf.ai
@@ -849,6 +804,7 @@ sort.survey.tx.ai
 www.sort.survey.tx.ai
 cloud.nya.ai
 www.ai-ap.com
+my.ai
 general.ai
 www.general.ai
 m.nya.ai
@@ -863,6 +819,7 @@ secure.ai-metal.com
 AI-TOL-SBS-2011.AIToledo.local
 ssl.ai-jigyodan.or.jp
 babycenter.ai
+marketing.ai
 name.ai
 www.name.ai
 bytesamur.ai
